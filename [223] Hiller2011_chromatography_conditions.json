@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "line": "autosampler. The column system consisted of three reversed phase",
+      "column_brand": "Nucleosil",
+      "column_type": null,
+      "dimensions": null,
+      "particle_size": null,
+      "pore_size": null,
+      "mobile_phase_solvents": [],
+      "solvent_ratio": null,
+      "flow_rate": null,
+      "temperature": null,
+      "detection": "RI"
+    },
+    {
+      "line": "the1,4-PIsamplesasafunctionofeluentcomposition.Itcanbe",
+      "column_brand": "Agilent",
+      "column_type": "RP",
+      "dimensions": null,
+      "particle_size": null,
+      "pore_size": null,
+      "mobile_phase_solvents": [],
+      "solvent_ratio": null,
+      "flow_rate": null,
+      "temperature": null,
+      "detection": "RI"
+    }
+  ],
+  "associations": []
+}

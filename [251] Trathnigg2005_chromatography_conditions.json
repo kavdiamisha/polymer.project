@@ -1,0 +1,312 @@
+{
+  "conditions": [
+    {
+      "line": "(LCCC)forEOonaDiolcolumninacetonewater78:12(w/w)andforPOonapoly(divinylbenzene)columninacetonewater92:8(w/w)or",
+      "manufacturer": "Diol",
+      "column_brand": "Diol",
+      "column_type": "divinylbenzene",
+      "dimensions": null,
+      "particle_size": null,
+      "pore_size": "8 \u00c5",
+      "mobile_phase_solvents": [
+        "water",
+        "acetone"
+      ],
+      "solvent_ratio": "78:12 (w/w)",
+      "solvent_additives": [],
+      "gradient_info": null,
+      "is_gradient": false,
+      "flow_rate": null,
+      "temperature": null
+    },
+    {
+      "line": "Situation Column Mobile EO PO Columns were connected to two column selection valves",
+      "manufacturer": null,
+      "column_brand": null,
+      "column_type": "RP",
+      "dimensions": null,
+      "particle_size": null,
+      "pore_size": "1 \u00c5",
+      "mobile_phase_solvents": [],
+      "solvent_ratio": null,
+      "solvent_additives": [],
+      "gradient_info": "gradient elution (details in text)",
+      "is_gradient": true,
+      "flow_rate": null,
+      "temperature": null
+    },
+    {
+      "line": "1 RP High LCCC LAC 2350HPLCpumpandanISCO2360gradientprogrammer",
+      "manufacturer": null,
+      "column_brand": null,
+      "column_type": "RP",
+      "dimensions": null,
+      "particle_size": null,
+      "pore_size": null,
+      "mobile_phase_solvents": [],
+      "solvent_ratio": null,
+      "solvent_additives": [],
+      "gradient_info": "gradient elution (details in text)",
+      "is_gradient": true,
+      "flow_rate": "0.5 ml/min",
+      "temperature": null
+    },
+    {
+      "line": "Thisapproachisnotveryfavorable,ifthemolarmassof temperature: 308C.",
+      "manufacturer": "Jordi Associates",
+      "column_brand": "Jordi",
+      "column_type": "DVB",
+      "dimensions": null,
+      "particle_size": null,
+      "pore_size": null,
+      "mobile_phase_solvents": [],
+      "solvent_ratio": null,
+      "solvent_additives": [
+        "100 poly"
+      ],
+      "gradient_info": "gradient elution (details in text)",
+      "is_gradient": true,
+      "flow_rate": null,
+      "temperature": "30\u00b0C"
+    },
+    {
+      "line": "PO unit on a RP column in a different mobile phase 4.6mm; particle diameterZ5mm; nominal pore sizeZ",
+      "manufacturer": "Jordi Associates",
+      "column_brand": "Jordi",
+      "column_type": "PEG",
+      "dimensions": "250\u00d74.6 mm",
+      "particle_size": null,
+      "pore_size": "500 \u00c5",
+      "mobile_phase_solvents": [],
+      "solvent_ratio": null,
+      "solvent_additives": [],
+      "gradient_info": null,
+      "is_gradient": false,
+      "flow_rate": null,
+      "temperature": null
+    },
+    {
+      "line": "The opposite may happen on normal phase columns: at 250!4.6mm; particle diameter: 5mm; nominal pore",
+      "manufacturer": "Nucleosil",
+      "column_brand": "Nucleosil",
+      "column_type": "Diol",
+      "dimensions": "250\u00d74.6 mm",
+      "particle_size": null,
+      "pore_size": "120 \u00c5",
+      "mobile_phase_solvents": [],
+      "solvent_ratio": null,
+      "solvent_additives": [],
+      "gradient_info": null,
+      "is_gradient": false,
+      "flow_rate": null,
+      "temperature": null
+    },
+    {
+      "line": "show the presence of homopolymers, as they should be measurements were performed on a Styragel HR3 column",
+      "manufacturer": "Agilent Technologies",
+      "column_brand": "Agilent",
+      "column_type": null,
+      "dimensions": "300\u00d77.8 mm",
+      "particle_size": null,
+      "pore_size": "2 \u00c5",
+      "mobile_phase_solvents": [],
+      "solvent_ratio": null,
+      "solvent_additives": [
+        "7.8 mm each"
+      ],
+      "gradient_info": null,
+      "is_gradient": false,
+      "flow_rate": "1.00 ml/min",
+      "temperature": null
+    },
+    {
+      "line": "The columns and density cells were placed in a copolymersfromSigma-Aldrich,BASFandSERVA.Several",
+      "manufacturer": null,
+      "column_brand": null,
+      "column_type": "PEG",
+      "dimensions": null,
+      "particle_size": null,
+      "pore_size": "70. \u00c5",
+      "mobile_phase_solvents": [],
+      "solvent_ratio": null,
+      "solvent_additives": [],
+      "gradient_info": null,
+      "is_gradient": false,
+      "flow_rate": null,
+      "temperature": "25.0\u00b0C"
+    },
+    {
+      "line": "at a flow rate of0.5ml/min. isgiveninTables2and3.Theparametersspecifiedbythe",
+      "manufacturer": null,
+      "column_brand": null,
+      "column_type": null,
+      "dimensions": null,
+      "particle_size": null,
+      "pore_size": "2 \u00c5",
+      "mobile_phase_solvents": [],
+      "solvent_ratio": null,
+      "solvent_additives": [],
+      "gradient_info": null,
+      "is_gradient": false,
+      "flow_rate": "0.5 ml/min",
+      "temperature": null
+    },
+    {
+      "line": "solventpeak,whichisduetothefact,thatthiscolumnhasa Therefore, we looked for another column with similar",
+      "manufacturer": "Discovery",
+      "column_brand": "Discovery",
+      "column_type": "PEG",
+      "dimensions": null,
+      "particle_size": null,
+      "pore_size": "2. \u00c5",
+      "mobile_phase_solvents": [],
+      "solvent_ratio": null,
+      "solvent_additives": [],
+      "gradient_info": null,
+      "is_gradient": false,
+      "flow_rate": null,
+      "temperature": null
+    },
+    {
+      "line": "water (18.5%) [43]. No information was, however, given according to the length of the PO blocks, and show also",
+      "manufacturer": "Diol",
+      "column_brand": "Diol",
+      "column_type": "PEG",
+      "dimensions": null,
+      "particle_size": null,
+      "pore_size": null,
+      "mobile_phase_solvents": [],
+      "solvent_ratio": null,
+      "solvent_additives": [],
+      "gradient_info": null,
+      "is_gradient": false,
+      "flow_rate": null,
+      "temperature": null
+    },
+    {
+      "line": "homopolymer PEG overlaps with that of the block Onthecolumnsusedinthisstudy,homopolymerscanbe",
+      "manufacturer": "Styragel",
+      "column_brand": "Styragel",
+      "column_type": "PEG",
+      "dimensions": null,
+      "particle_size": null,
+      "pore_size": "13 \u00c5",
+      "mobile_phase_solvents": [],
+      "solvent_ratio": null,
+      "solvent_additives": [],
+      "gradient_info": null,
+      "is_gradient": false,
+      "flow_rate": null,
+      "temperature": null
+    },
+    {
+      "line": "a HS-PEGin44%acetone.",
+      "manufacturer": "PLgel",
+      "column_brand": "PLgel",
+      "column_type": "PEG",
+      "dimensions": null,
+      "particle_size": null,
+      "pore_size": null,
+      "mobile_phase_solvents": [],
+      "solvent_ratio": null,
+      "solvent_additives": [],
+      "gradient_info": null,
+      "is_gradient": false,
+      "flow_rate": null,
+      "temperature": null
+    }
+  ],
+  "associations": [
+    {
+      "polymer": "block copolymer",
+      "column": "Waters",
+      "context": "allow not only the determination of their MMD, but also performed using the software CHROMA. All SEC"
+    },
+    {
+      "polymer": "block copolymer",
+      "column": "Styragel",
+      "context": "allow not only the determination of their MMD, but also performed using the software CHROMA. All SEC"
+    },
+    {
+      "polymer": "block copolymer",
+      "column": "PLgel",
+      "context": "allow not only the determination of their MMD, but also performed using the software CHROMA. All SEC"
+    },
+    {
+      "polymer": "block copolymer",
+      "column": "Agilent",
+      "context": "show the presence of homopolymers, as they should be measurements were performed on a Styragel HR3 column"
+    },
+    {
+      "polymer": "PEG",
+      "column": "Jordi",
+      "context": "Fig.2.ChromatogramsofPEGs,PPGs,andwater,asobtainedontheJordicolumnin92.42wt%acetone(CAPforPO).Detection:RI."
+    },
+    {
+      "polymer": "PPG",
+      "column": "Jordi",
+      "context": "Fig.2.ChromatogramsofPEGs,PPGs,andwater,asobtainedontheJordicolumnin92.42wt%acetone(CAPforPO).Detection:RI."
+    },
+    {
+      "polymer": "poloxamer",
+      "column": "Jordi",
+      "context": "Fig.2.ChromatogramsofPEGs,PPGs,andwater,asobtainedontheJordicolumnin92.42wt%acetone(CAPforPO).Detection:RI."
+    },
+    {
+      "polymer": "PEG",
+      "column": "Discovery",
+      "context": "Fig.5.ChromatogramsofPEGsandPPGs,asobtainedontheDiscoveryHS-PEGcolumnin45.58wt%acetone.Detection:RI(waterpeakwithoppositesign)."
+    },
+    {
+      "polymer": "PPG",
+      "column": "Discovery",
+      "context": "Fig.5.ChromatogramsofPEGsandPPGs,asobtainedontheDiscoveryHS-PEGcolumnin45.58wt%acetone.Detection:RI(waterpeakwithoppositesign)."
+    },
+    {
+      "polymer": "poloxamer",
+      "column": "Discovery",
+      "context": "Fig.5.ChromatogramsofPEGsandPPGs,asobtainedontheDiscoveryHS-PEGcolumnin45.58wt%acetone.Detection:RI(waterpeakwithoppositesign)."
+    },
+    {
+      "polymer": "diblock",
+      "column": "Discovery",
+      "context": "Fig.5.ChromatogramsofPEGsandPPGs,asobtainedontheDiscoveryHS-PEGcolumnin45.58wt%acetone.Detection:RI(waterpeakwithoppositesign)."
+    },
+    {
+      "polymer": "block copolymer",
+      "column": "Discovery",
+      "context": "Fig.5.ChromatogramsofPEGsandPPGs,asobtainedontheDiscoveryHS-PEGcolumnin45.58wt%acetone.Detection:RI(waterpeakwithoppositesign)."
+    },
+    {
+      "polymer": "PEG",
+      "column": "Diol",
+      "context": "Fig.7.ChromatogramsofseveralpoloxamersandPPG1000,asobtainedontheDiscoveryHS-PEGcolumnin44.52wt%acetone.Detection:ELSD."
+    },
+    {
+      "polymer": "PPG",
+      "column": "Diol",
+      "context": "Fig.7.ChromatogramsofseveralpoloxamersandPPG1000,asobtainedontheDiscoveryHS-PEGcolumnin44.52wt%acetone.Detection:ELSD."
+    },
+    {
+      "polymer": "poloxamer",
+      "column": "Diol",
+      "context": "Fig.7.ChromatogramsofseveralpoloxamersandPPG1000,asobtainedontheDiscoveryHS-PEGcolumnin44.52wt%acetone.Detection:ELSD."
+    },
+    {
+      "polymer": "Synperonic",
+      "column": "Diol",
+      "context": "Fig.10.ChromatogramsofseveralpoloxamersandPEGs,asobtainedontheDiolcolumnin78.54wt%acetone."
+    }
+  ],
+  "column_mentions": {
+    "Jordi": 13,
+    "Nucleosil": 5,
+    "Discovery": 11,
+    "Agilent": 1,
+    "Supelco": 1,
+    "Waters": 1,
+    "Styragel": 4,
+    "PLgel": 7,
+    "Diol": 8
+  }
+}
