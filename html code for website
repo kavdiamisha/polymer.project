@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dr. Yongmei Wang — Polymer Research Project</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #f4f5f7;
+      --bg-card: #ffffff;
+      --text: #1a1f2e;
+      --muted: #6b7280;
+      --accent: #3a6ea5;
+      --accent-light: #dbe8f5;
+      --border: #e2e6ec;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(244,245,247,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6vw;
+      height: 64px;
+    }
+
+    .nav-brand {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* SECTIONS */
+    section {
+      min-height: 100vh;
+      padding: 120px 6vw 80px;
+      display: flex;
+      align-items: center;
+    }
+
+    section:nth-child(odd) { background: var(--bg); }
+    section:nth-child(even) { background: #edf1f7; }
+
+    .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .section-inner.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    h1, h2 {
+      font-family: var(--serif);
+      font-weight: 300;
+      line-height: 1.2;
+    }
+
+    h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+    h2 { font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 2rem; }
+
+    p { color: var(--muted); max-width: 620px; margin-bottom: 1.2rem; }
+
+    /* HERO */
+    #home .section-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-top: 1.5rem;
+      max-width: 420px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn:hover { background: #2d5a8a; transform: translateY(-2px); }
+
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .stat-card:hover { transform: translateX(4px); }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--accent);
+      min-width: 60px;
+    }
+
+    .stat-label { font-size: 0.85rem; color: var(--muted); }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-portrait {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(145deg, var(--accent-light), #c8ddf0);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 4rem;
+      color: var(--accent);
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: -0.02em;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.78rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      font-weight: 500;
+    }
+
+    /* RESEARCH */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .research-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.8rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .research-card:hover {
+      box-shadow: 0 6px 20px rgba(58,110,165,0.12);
+      transform: translateY(-3px);
+    }
+
+    .research-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .research-card h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+
+    .research-card p { font-size: 0.88rem; margin: 0; }
+
+    /* PUBLICATIONS */
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .pub-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 1.5rem 1.8rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .pub-item:hover { box-shadow: 0 4px 16px rgba(58,110,165,0.1); }
+
+    .pub-title {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+
+    .pub-meta {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .pub-year {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-right: 0.5rem;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--accent-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--bg-card);
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: var(--text);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-group textarea { min-height: 120px; resize: vertical; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    @media (max-width: 768px) {
+      #home .section-inner,
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-visual { display: none; }
+      nav { padding: 0 4vw; }
+      .nav-links { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="#home">Dr. Yongmei Wang</a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home">
+    <div class="section-inner">
+      <div class="hero-text">
+        <div class="hero-badge">Polymer Research Project</div>
+        <h1>Dr. Yongmei<br/><em>Wang</em></h1>
+        <p class="hero-subtitle">Advancing the frontiers of polymer science through computational modeling, experimental design, and materials innovation.</p>
+        <a class="btn" href="#research">Explore Research</a>
+      </div>
+      <div class="hero-visual">
+        <div class="stat-card">
+          <div class="stat-num">20+</div>
+          <div class="stat-label">Years of Research Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">80+</div>
+          <div class="stat-label">Peer-Reviewed Publications</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Funded Research Projects</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">30+</div>
+          <div class="stat-label">Graduate Students Mentored</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-portrait">YW</div>
+        <div>
+          <div class="section-label">About</div>
+          <h2>Bridging Theory &amp; Experiment</h2>
+          <p>Dr. Yongmei Wang is a professor specializing in polymer physics and computational materials science. Her research group develops novel theoretical and computational approaches to understand the structure, dynamics, and thermodynamics of polymeric systems.</p>
+          <p>Her work spans from fundamental polymer physics to the design of functional polymer materials with applications in energy storage, drug delivery, and sustainable materials.</p>
+          <p>Dr. Wang has been recognized with multiple NSF and DOE grants, and is a fellow of the American Physical Society.</p>
+          <div class="tag-list">
+            <span class="tag">Polymer Physics</span>
+            <span class="tag">Computational Modeling</span>
+            <span class="tag">Molecular Dynamics</span>
+            <span class="tag">Thermodynamics</span>
+            <span class="tag">Soft Matter</span>
+            <span class="tag">Materials Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="section-inner">
+      <div class="section-label">Research</div>
+      <h2>Areas of Focus</h2>
+      <p>Our group pursues interconnected lines of inquiry at the intersection of polymer physics, computational chemistry, and materials engineering.</p>
+      <div class="research-grid">
+        <div class="research-card">
+          <div class="research-icon">🔬</div>
+          <h3>Polymer Dynamics</h3>
+          <p>Investigating chain mobility, relaxation behavior, and viscoelastic properties in bulk and confined polymer systems using molecular simulation.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon">⚡</div>
+          <h3>Energy Materials</h3>
+          <p>Designing polymer electrolytes and ion-conducting membranes for next-generation batteries and fuel cells through atomistic and coarse-grained modeling.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon">🧬</div>
+          <h3>Biopolymers</h3>
+          <p>Studying protein–polymer conjugates and bio-inspired macromolecular architectures for targeted drug delivery and biosensor applications.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon">🌿</div>
+          <h3>Sustainable Polymers</h3>
+          <p>Developing computational strategies to design biodegradable and recyclable polymers, supporting a circular materials economy.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon">📐</div>
+          <h3>Polymer Blends &amp; Composites</h3>
+          <p>Phase behavior and morphology control in multi-component polymer systems, from block copolymer self-assembly to nanocomposites.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon">💻</div>
+          <h3>Computational Methods</h3>
+          <p>Advancing force field development, enhanced sampling algorithms, and machine learning potentials for accurate polymer simulation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="section-inner">
+      <div class="section-label">Publications</div>
+      <h2>Selected Works</h2>
+      <p>A selection of recent publications from the Wang Research Group. For a full list, visit Google Scholar.</p>
+      <div class="pub-list">
+        <div class="pub-item">
+          <div class="pub-title">Ion Transport Mechanisms in Polymer Electrolyte Membranes: A Molecular Dynamics Study</div>
+          <div class="pub-meta"><span class="pub-year">2024</span>Y. Wang, J. Chen, L. Zhao · <em>Macromolecules</em>, 57(4), 1823–1836</div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-title">Coarse-Grained Modeling of Block Copolymer Self-Assembly under Confinement</div>
+          <div class="pub-meta"><span class="pub-year">2023</span>Y. Wang, M. Liu · <em>Journal of Chemical Physics</em>, 158(11), 114902</div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-title">Machine Learning Force Fields for Polyethylene: Accuracy, Transferability, and Efficiency</div>
+          <div class="pub-meta"><span class="pub-year">2023</span>R. Kim, Y. Wang · <em>npj Computational Materials</em>, 9, 88</div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-title">Thermodynamics of Protein–Polymer Conjugate Formation: Insights from Atomistic Simulation</div>
+          <div class="pub-meta"><span class="pub-year">2022</span>Y. Wang, A. Patel, S. Huang · <em>ACS Macro Letters</em>, 11(7), 867–873</div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-title">Relaxation Dynamics of Entangled Polymer Melts Near Surfaces</div>
+          <div class="pub-meta"><span class="pub-year">2022</span>Y. Wang, T. Zhang · <em>Physical Review Letters</em>, 128, 198001</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="section-label">Contact</div>
+      <h2>Get in Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>Interested in collaboration, graduate study opportunities, or learning more about our research? We'd love to hear from you.</p>
+          <div class="contact-row">
+            <div class="contact-icon">📍</div>
+            <div>Department of Chemical Engineering<br/>University Name, City, State 00000</div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">✉️</div>
+            <div>ywang@university.edu</div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">📞</div>
+            <div>(555) 000-0000</div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">🔗</div>
+            <div>Google Scholar &nbsp;|&nbsp; ResearchGate &nbsp;|&nbsp; ORCID</div>
+          </div>
+        </div>
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="How can we help?"></textarea>
+          </div>
+          <button class="btn" type="submit" style="border:none;cursor:pointer;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Dr. Yongmei Wang — Polymer Research Project. All rights reserved.
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section-inner').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
